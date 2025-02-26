@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "LiveKit",
+    name: "Channel_LiveKit",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15),
@@ -12,8 +12,8 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "LiveKit",
-            targets: ["LiveKit"]
+            name: "Channel_LiveKit",
+            targets: ["Channel_LiveKit"]
         ),
     ],
     dependencies: [
@@ -32,7 +32,7 @@ let package = Package(
             publicHeadersPath: "include"
         ),
         .target(
-            name: "LiveKit",
+            name: "Channel_LiveKit",
             dependencies: [
                 .product(name: "LiveKitWebRTC", package: "webrtc-xcframework"),
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
@@ -46,14 +46,14 @@ let package = Package(
         .testTarget(
             name: "LiveKitTests",
             dependencies: [
-                "LiveKit",
+                "Channel_LiveKit",
                 .product(name: "JWTKit", package: "jwt-kit"),
             ]
         ),
         .testTarget(
             name: "LiveKitTestsObjC",
             dependencies: [
-                "LiveKit",
+                "Channel_LiveKit",
                 .product(name: "JWTKit", package: "jwt-kit"),
             ]
         ),
