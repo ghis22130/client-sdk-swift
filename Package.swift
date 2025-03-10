@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "LiveKit",
+    name: "LiveKit_Legacy",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15)
@@ -12,8 +12,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "LiveKit",
-            targets: ["LiveKit"]
+            name: "LiveKit_Legacy",
+            targets: ["LiveKit_Legacy"]
         )
     ],
     dependencies: [
@@ -25,7 +25,7 @@ let package = Package(
     targets: [
         .systemLibrary(name: "CHeaders"),
         .target(
-            name: "LiveKit",
+            name: "LiveKit_Legacy",
             dependencies: [
                 .target(name: "CHeaders"),
                 "WebRTC", "SwiftProtobuf", "Promises",
@@ -35,7 +35,7 @@ let package = Package(
         ),
         .testTarget(
             name: "LiveKitTests",
-            dependencies: ["LiveKit"]
+            dependencies: ["LiveKit_Legacy"]
         )
     ]
 )
